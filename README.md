@@ -1,62 +1,67 @@
-# Pro Invoice System Arabic
+# Pro Invoice System
 
-إضافة ووردبريس بسيطة لإدارة الفواتير باللغة العربية. توفر الإضافة شاشة إدارة داخل لوحة التحكم لإضافة الفواتير وعرضها وتعديلها وحذفها، مع إمكانية تصدير البيانات إلى ملف Excel، بالإضافة إلى شورت كود لواجهة أمامية مخصصة للمدير.
+Pro Invoice System is a WordPress plugin for managing invoices from the admin dashboard. It lets you add, view, edit, delete, filter, and export invoices, and it also includes a frontend shortcode for administrator-only access.
 
-## المميزات
+## Developer
 
-- إضافة فاتورة جديدة مع رقم الفاتورة والتاريخ والمورد والإجمالي والتصنيف.
-- رفع صورة للفواتير وحفظ رابطها داخل قاعدة البيانات.
-- عرض جميع الفواتير داخل لوحة التحكم مع الفلترة حسب التصنيف.
-- عرض تفاصيل الفاتورة بشكل مستقل.
-- تعديل الفواتير أو حذفها من لوحة التحكم.
-- تصدير الفواتير إلى ملف Excel بصيغة XLS.
-- دعم شورت كود للواجهة الأمامية: `pis_frontend`.
-- واجهة عربية واتجاه RTL مع استخدام خط Cairo في الواجهة الإدارية.
+- Mohammed Khalifa
+- Twitter: [https://x.com/mmd1790](https://x.com/mmd1790)
 
-## متطلبات التشغيل
+## Features
 
-- ووردبريس.
-- صلاحية مدير الموقع لتصفية وإدارة الفواتير.
-- PHP وMySQL حسب متطلبات ووردبريس.
+- Add invoices with invoice number, date, supplier, total, and category.
+- Upload an invoice image and store its URL in the database.
+- View all invoices in the WordPress admin area with category filtering.
+- Open invoice details in a dedicated view.
+- Edit or delete invoices from the admin area.
+- Export invoices to an Excel-compatible XLS file.
+- Use the frontend shortcode: `pis_frontend`.
+- RTL-friendly admin UI with Cairo styling.
 
-## التثبيت
+## Requirements
 
-1. انسخ ملف `pro-invoice-system.php` إلى مجلد الإضافات داخل ووردبريس.
-2. ضع الملف داخل مجلد خاص بالإضافة، مثل `pro-invoice-system`.
-3. فعّل الإضافة من لوحة التحكم في ووردبريس.
+- WordPress.
+- Administrator access for managing and filtering invoices.
+- PHP and MySQL compatible with your WordPress installation.
 
-## الاستخدام
+## Installation
 
-بعد التفعيل ستظهر قائمة باسم **الفواتير** داخل لوحة تحكم ووردبريس. من هناك يمكنك:
+1. Copy `pro-invoice-system.php` into a WordPress plugin folder.
+2. Place it inside its own plugin directory, for example `pro-invoice-system`.
+3. Activate the plugin from the WordPress admin dashboard.
 
-- إضافة فاتورة جديدة.
-- استعراض جميع الفواتير.
-- فلترة الفواتير حسب التصنيف.
-- تصدير كل الفواتير أو الفواتير الخاصة بتصنيف معين.
-- عرض أو تعديل أو حذف أي فاتورة.
+## Usage
 
-## الواجهة الأمامية
+After activation, a menu named **Invoices** appears in the WordPress admin area. From there you can:
 
-توفّر الإضافة شورت كود واحدًا لعرض نموذج الفواتير والبيانات في الواجهة الأمامية:
+- Add a new invoice.
+- Browse all invoices.
+- Filter invoices by category.
+- Export all invoices or only the selected category.
+- View, edit, or delete any invoice.
+
+## Frontend Shortcode
+
+The plugin provides one shortcode for showing the invoice form and table on the frontend:
 
 ```text
 [pis_frontend]
 ```
 
-ملاحظات:
+Notes:
 
-- الشورت كود متاح فقط للمستخدمين المسجلين الدخول.
-- الوصول مسموح لمستخدمين بصلاحية المدير فقط.
+- The shortcode is available only to logged-in users.
+- Access is restricted to administrator users.
 
-## بنية البيانات
+## Database Table
 
-عند التفعيل تنشئ الإضافة جدولًا في قاعدة البيانات باسم:
+When activated, the plugin creates a database table named:
 
 ```text
 {prefix}pis_invoices
 ```
 
-ويحتوي على الحقول التالية:
+It includes the following fields:
 
 - `id`
 - `invoice_number`
@@ -66,15 +71,15 @@
 - `category`
 - `image`
 
-## التصدير إلى Excel
+## Excel Export
 
-تدعم الإضافة التصدير من خلال لوحة التحكم، مع إمكانية:
+The admin area supports export with:
 
-- تصدير كل الفواتير.
-- تصدير الفواتير حسب التصنيف.
+- Export all invoices.
+- Export invoices by category.
 
-## ملاحظات
+## Notes
 
-- الإضافة تعتمد على صلاحيات المدير في الواجهة الأمامية.
-- الصور يتم رفعها عبر نظام الرفع المدمج في ووردبريس.
-- الواجهة الإدارية مصممة لتكون عربية واتجاهها من اليمين إلى اليسار.
+- The frontend access is restricted to administrators.
+- Images are uploaded through the built-in WordPress upload handler.
+- The admin UI is designed for Arabic/RTL workflows.
